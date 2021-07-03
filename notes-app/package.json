@@ -1,0 +1,31 @@
+{
+    "name": "notes-app",
+    "version": "1.0.0",
+    "description": "Proyecto crear una apps de notas",
+    "main": "app.js",
+    "type": "commonjs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix --ext .js,.jsx ."
+    },
+    "author": "godxvincent@gmail.com",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^7.27.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.3",
+        "eslint-plugin-prettier": "^3.4.0",
+        "jshint": "^2.12.0",
+        "nodemon": "^2.0.7",
+        "prettier": "^1.19.1",
+        "prettier-eslint": "^9.0.2"
+    },
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "validator": "^10.8.0",
+        "yargs": "^17.0.1"
+    }
+}
