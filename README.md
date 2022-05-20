@@ -3,22 +3,15 @@
 [![node](https://img.shields.io/badge/node-v14.16.1-yellow.svg)](https://nodejs.org)
 [![npm](https://img.shields.io/badge/npm-v6.14.12-red.svg)](https://www.npmjs.com/)
 
-<!-- >A simple NodeJs project to test ADL DevOps Node Lambda Pipelines. `:wq`
->
->Developed with all :heart: in the world by ADL DevOps team -->
-
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node](https://nodejs.org)
-* [NPM](hhttps://www.npmjs.com/)
+- [Git](http://git-scm.com/)
+- [Node](https://nodejs.org)
+- [NPM](hhttps://www.npmjs.com/)
 
 ## Installation
-
-<!-- * `git clone git@github.com:avaldigitallabs/devops-pipeline-node-lambdas-example.git` this repository
-* change into the new directory `cd devops-pipeline-node-lambdas-example` -->
 
 ## Dependencies
 
@@ -36,11 +29,7 @@ Run `npm test` to execute the unit tests via [Mocha](https://mochajs.org/).
 
 If you find this repo useful here's how you can help:
 
-<!-- 1. Send a Merge Request with your awesome new features and bug fixes
-2. Wait for a Coronita :beer: you deserve it. -->
-
 ## Further Reading / Useful Links
 
-* [NodeJs](https://nodejs.org/en/about/)
-* [NPM](https://www.npmjs.com/)
-
+- [NodeJs](https://nodejs.org/en/about/)
+- [NPM](https://www.npmjs.com/)

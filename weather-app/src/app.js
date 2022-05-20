@@ -1,24 +1,27 @@
-const request = require("postman-request");
+const geocode = require("./utils.js/geocode");
+const forecast = require("./utils.js/forecast");
 
-const url =
-    "http://api.weatherstack.com/current?access_key=723bcdee53bf613eecb575d85ae514fe&query=New York";
-
-const url2 =
-    "http://api.weatherstack.com/current?access_key=723bcdee53bf613eecb575d85ae514fe&query=Bogota&units=f";
-
-// request(url, function(error, response, body) {
-//     console.log("error:", error); // Print the error if one occurred
-//     // Print the response status code if a response was received
-//     console.log("statusCode:", response && response.statusCode);
-//     console.log("body:", body); // Print the HTML for the Google homepage.
-// });
-
-request({ url: url2, json: true }, function(error, response, body) {
-    // console.log("error:", error); // Print the error if one occurred
-    // Print the response status code if a response was received
-    // console.log("statusCode:", response && response.statusCode);
-    // console.log("body:", body); // Print the HTML for the Google homepage.
-
-    console.log(`[${body.current.weather_descriptions[0]}] :La temperatura actual es ${body.current.temperature} pero se siente una temperatura de ${body.current.feelslike}`);
-
-});
+if (process.argv.length > 2) {
+  const place = process.argv[2];
+  geocode.geoCode(place, (error, data) => {
+    if (error) {
+      console.log(error);
+      return;
+    }
+    forecast.foreCast(data.longitude, data.latitude, (error2, forecastData) => {
+      if (error2) {
+        console.log(error2);
+        return;
+      }
+      const message = `[${forecastData.descripcion_clima}] :
+              La temperatura actual es ${forecastData.temperatura} 
+              pero se siente una temperatura de ${forecastData.sensacion}`;
+      console.log(data.location);
+      console.log(message);
+    });
+  });
+} else {
+  console.log(
+    "Debe ingresar un lugar como primer argumento 'node app.js bogota'"
+  );
+}
