@@ -17,7 +17,8 @@
     "prettier:list": "subpkg run prettier:list",
     "prettier:write": "subpkg run prettier:write",
     "prettier": "subpkg run prettier",
-    "customScript": ""
+    "customScript": "",
+    "nodemon": "subpkg run nodemon"
   },
   "subPackages": [
     "notes-app",
@@ -26,6 +27,7 @@
   ],
   "devDependencies": {
     "jshint": "^2.13.1",
+    "nodemon": "^2.0.16",
     "subpackage": "^1.1.0"
   }
 }
