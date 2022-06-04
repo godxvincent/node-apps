@@ -28,6 +28,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "express": "^4.17.1",
+    "hbs": "^4.2.0",
     "postman-request": "^2.88.1-postman.30",
     "validator": "^10.8.0",
     "yargs": "^17.0.1"
