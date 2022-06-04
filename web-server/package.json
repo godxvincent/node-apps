@@ -9,7 +9,7 @@
     "start": "nodemon app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
-    "nodemon": "nodemon src/app.js"
+    "nodemon": "nodemon src/app.js -e js,hbs"
   },
   "author": "godxvincent@gmail.com",
   "license": "ISC",
