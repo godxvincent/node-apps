@@ -15,7 +15,7 @@
     "audit": "subpkg run audit",
     "build": "subpkg run build",
     "sonar": "subpkg run sonar",
-    "start": "subpkg run start",
+    "start": "node web-server/src/app.js",
     "lint": "subpkg run lint",
     "lint:fix": "subpkg run lint:fix",
     "prettier:list": "subpkg run prettier:list",
