@@ -2,6 +2,9 @@
   "name": "node-apps",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=17"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com:godxvincent/node-apps.git"
@@ -21,8 +24,6 @@
     "nodemon": "subpkg run nodemon"
   },
   "subPackages": [
-    "notes-app",
-    "weather-app",
     "web-server"
   ],
   "devDependencies": {

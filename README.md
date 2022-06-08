@@ -37,7 +37,13 @@ heroku keys:add C:\Users/godxv/.ssh/{key_name}.pub
 
 # moving to web-server project folder and run
 # the app name should be unique across all heroku apps.
-heroku create godxvincent-weatherapp
+heroku create -a godxvincent-weatherapp
+
+# If for some reason the project doesn't create the remote run this command
+heroku git:remote -a godxvincent-weatherapp
+
+
+
 
 ```
 
