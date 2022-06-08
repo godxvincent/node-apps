@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon app.js",
+    "start": "node src/app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix --ext .js,.jsx .",
     "nodemon": "nodemon src/app.js -e js,hbs"

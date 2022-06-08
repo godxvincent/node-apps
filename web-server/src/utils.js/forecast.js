@@ -5,7 +5,7 @@ const foreCast = (longitude, latitude, callback) => {
   const queryString = {
     access_key: "723bcdee53bf613eecb575d85ae514fe",
     query: `${latitude},${longitude}`,
-    units: "f"
+    units: "m"
   };
 
   request(

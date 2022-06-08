@@ -2,9 +2,13 @@ const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
 
+const geocode = require("./utils.js/geocode");
+const forecast = require("./utils.js/forecast");
+
 const publicDirectory = path.join(__dirname, "../public");
 const viewsDirectory = path.join(__dirname, "../templates/views");
 const partialsDirectory = path.join(__dirname, "../templates/partials");
+const port = process.env.PORT || 3000;
 
 const app = express();
 // Set allows to define different settings for express in this case we are setting hbs as
@@ -39,9 +43,32 @@ app.get("/help", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-  res.send({
-    forecast: "It is snowing",
-    location: "Philadelphia"
+  const address = req.query.address;
+  if (!address) {
+    return res.send({
+      errorMessage: "An address should be provided"
+    });
+  }
+
+  geocode.geoCode(address, (error, data) => {
+    if (error) {
+      return res.send({
+        errorMessage: error
+      });
+    }
+    forecast.foreCast(data.longitude, data.latitude, (error2, forecastData) => {
+      if (error2) {
+        return res.send({
+          errorMessage: error2
+        });
+      }
+      console.log(forecastData);
+      res.send({
+        forecast: forecastData,
+        location: data.location,
+        address: address
+      });
+    });
   });
 });
 
@@ -61,6 +88,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is runing on port 3000");
+app.listen(port, () => {
+  console.log(`Server is runing on port ${port}`);
 });
