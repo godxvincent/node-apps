@@ -42,6 +42,9 @@ heroku create -a godxvincent-weatherapp
 # If for some reason the project doesn't create the remote run this command
 heroku git:remote -a godxvincent-weatherapp
 
+# To deploy the app in heroku commit your changes and push the changes
+git push heroku master
+
 
 
 
