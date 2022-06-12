@@ -15,7 +15,6 @@
     "audit": "subpkg run audit",
     "build": "subpkg run build",
     "sonar": "subpkg run sonar",
-    "start": "node web-server/src/app.js",
     "lint": "subpkg run lint",
     "lint:fix": "subpkg run lint:fix",
     "prettier:list": "subpkg run prettier:list",
@@ -25,7 +24,8 @@
     "nodemon": "subpkg run nodemon"
   },
   "subPackages": [
-    "web-server"
+    "notes-app",
+    "weather-app"
   ],
   "devDependencies": {
     "jshint": "^2.13.1",
